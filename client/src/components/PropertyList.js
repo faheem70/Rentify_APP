@@ -14,7 +14,7 @@ const PropertyList = () => {
 
     useEffect(() => {
         const fetchProperties = async () => {
-            const res = await axios.get('https://rentify-app.onrender.com/pi/properties');
+            const res = await axios.get('https://rentify-app.onrender.com/api/properties');
             setProperties(res.data);
         };
         fetchProperties();
