@@ -12,8 +12,8 @@ const App = () => {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="#/register" element={<Register />} />
-          <Route path="#/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<PropertyList />} />
           <Route path="/addproperty" element={<PropertyForm />} />
           <Route path="/updateproperty/:id" element={<UpdatePropertyForm />} />

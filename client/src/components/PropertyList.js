@@ -86,9 +86,9 @@ const PropertyList = () => {
                     </div>
                 ) : (
                     <div className="auth-buttons">
-                        <a className="login-button" href='/login'>Login</a>
+                            <a className="login-button" href='/#login'>Login</a>
                         <span className="button-divider"></span>
-                        <a className="register-button" href="/register">Register</a>
+                            <a className="register-button" href="/#register">Register</a>
                     </div>
                 )}
             </header>
