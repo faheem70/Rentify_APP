@@ -1,0 +1,41 @@
+.update-property-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.update-property-form-container h2 {
+    margin-bottom: 20px;
+}
+
+.update-property-form-container form {
+    display: grid;
+    gap: 10px;
+}
+
+.update-property-form-container label {
+    font-weight: bold;
+}
+
+.update-property-form-container input[type="text"],
+.update-property-form-container input[type="number"],
+.update-property-form-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.update-property-form-container input[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.update-property-form-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
