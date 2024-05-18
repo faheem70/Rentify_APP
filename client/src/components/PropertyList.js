@@ -14,7 +14,7 @@ const PropertyList = () => {
 
     useEffect(() => {
         const fetchProperties = async () => {
-            const res = await axios.get('http://localhost:5000/api/properties');
+            const res = await axios.get('https://rentify-app.onrender.com/pi/properties');
             setProperties(res.data);
         };
         fetchProperties();
@@ -25,8 +25,8 @@ const PropertyList = () => {
             alert('You need to login to like properties.');
             return;
         }
-        await axios.put(`http://localhost:5000/api/properties/like/${id}`);
-        const res = await axios.get('http://localhost:5000/api/properties');
+        await axios.put(`https://rentify-app.onrender.com/api/properties/like/${id}`);
+        const res = await axios.get('https://rentify-app.onrender.com/api/properties');
         setProperties(res.data);
     };
 
@@ -37,7 +37,7 @@ const PropertyList = () => {
                 navigate('/login');
                 return;
             }
-            await axios.post(`http://localhost:5000/api/properties/interest/${id}`);
+            await axios.post(`https://rentify-app.onrender.com/api/properties/interest/${id}`);
         } catch (error) {
             alert('An error occurred while showing interest in the property.');
             console.error('Error:', error);
@@ -55,7 +55,7 @@ const PropertyList = () => {
     const handleDeleteProperty = async (id) => {
         if (window.confirm('Are you sure you want to delete this property?')) {
             try {
-                await axios.delete(`http://localhost:5000/api/properties/${id}`);
+                await axios.delete(`https://rentify-app.onrender.com/api/properties/${id}`);
                 const updatedProperties = properties.filter(property => property._id !== id);
                 setProperties(updatedProperties);
                 alert('Property deleted successfully!');

@@ -29,7 +29,7 @@ const PropertyForm = () => {
 
             const body = JSON.stringify(formData);
 
-            const res = await axios.post('http://localhost:5000/api/properties', body, config);
+            const res = await axios.post('https://rentify-app.onrender.com/api/properties', body, config);
 
             console.log(res.data); // Handle success response accordingly
             alert("Created Property Succesfully");

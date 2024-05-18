@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
         const token = localStorage.getItem('token');
         if (token) {
             axios.defaults.headers.common['x-auth-token'] = token;
-            axios.get('http://localhost:5000/api/users/me')
+            axios.get('https://rentify-app.onrender.com/api/users/me')
                 .then(res => setUser(res.data))
                 .catch(err => {
                     console.error(err);
@@ -24,18 +24,18 @@ const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        const res = await axios.post('http://localhost:5000/api/users/login', { email, password });
+        const res = await axios.post('https://rentify-app.onrender.com/api/users/login', { email, password });
         localStorage.setItem('token', res.data.token);
         axios.defaults.headers.common['x-auth-token'] = res.data.token;
-        const userRes = await axios.get('http://localhost:5000/api/users/me');
+        const userRes = await axios.get('https://rentify-app.onrender.com/api/users/me');
         setUser(userRes.data);
     };
 
     const register = async (userData) => {
-        const res = await axios.post('http://localhost:5000/api/users/register', userData);
+        const res = await axios.post('https://rentify-app.onrender.com/api/users/register', userData);
         localStorage.setItem('token', res.data.token);
         axios.defaults.headers.common['x-auth-token'] = res.data.token;
-        const userRes = await axios.get('http://localhost:5000/api/users/me');
+        const userRes = await axios.get('https://rentify-app.onrender.com/api/users/me');
         setUser(userRes.data);
     };
 

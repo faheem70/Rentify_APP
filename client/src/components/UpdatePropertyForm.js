@@ -18,7 +18,7 @@ const UpdatePropertyForm = () => {
     useEffect(() => {
         const fetchProperty = async () => {
             try {
-                const res = await axios.get(`http://localhost:5000/api/properties/${id}`);
+                const res = await axios.get(`https://rentify-app.onrender.com/api/properties/${id}`);
                 const propertyData = res.data;
                 setFormData({
                     place: propertyData.place,
@@ -51,7 +51,7 @@ const UpdatePropertyForm = () => {
 
             const body = JSON.stringify(formData);
 
-            await axios.put(`http://localhost:5000/api/properties/${id}`, body, config);
+            await axios.put(`https://rentify-app.onrender.com/api/properties/${id}`, body, config);
 
             // Redirect or display a success message as needed
             alert("Updated Successully")
